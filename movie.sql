@@ -246,3 +246,7 @@ update booking_tickets set final_amount=1600.00 where customer_name='Amit Joshi'
 delete from booking_tickets where payment_mode='Cash';
 
 drop table booking_tickets;
+
+select customer_name from booking_tickets;
+
+select * from booking_tickets where final_amount=1500.00
