@@ -16,7 +16,7 @@ insert into movie_info values
 (null,'Sci-Fi','English',160000000.00,8.8,850000000.00,'Christopher Nolan');
 
 insert into movie_info values
-('Joker','Action','English',55000000.00,8.4,1070000000.00,'Todd Phillips');
+('Joker','Action','English',55000000.00,8.4,null,'Todd Phillips');
 
 insert into movie_info values
 ('Parasite','Comedy','Korean',11400000.00,8.5,258000000.00,'Bong Joon-ho');
@@ -249,4 +249,44 @@ drop table booking_tickets;
 
 select customer_name from booking_tickets;
 
-select * from booking_tickets where final_amount=1500.00
+select * from booking_tickets where final_amount>400.00;
+
+select distinct seat_category from booking_tickets;
+
+select city as city_name from theater;
+
+select movie_name,genre,IMDb_rating from movie_info;
+
+select movie_name from movie_info where movie_language='English' and IMDb_rating>8.5;
+
+select staff_name from staff where experience>5 or salary>50000;
+
+select actor_name from actors where gender!='male';
+
+select actor_name from actors where not gender='female';
+
+select * from movie_info where genre in ('Action','Comedy');
+
+select movie_name, movie_language from movie_info where movie_language in ('English','Hindi');
+
+select * from movie_info where genre not in ('Horror','Sci-Fi');
+
+select movie_name from movie_info where Director_Name not in ('Rajamouli','Christopher Nolan');
+
+select * from movie_info where collection is null;
+
+select * from movie_info where collection is not null;
+
+select * from movie_info order by IMDb_rating asc;
+
+select * from movie_info order by IMDb_rating desc;
+
+select count(*) from movie_info;
+
+select sum(collection) as total_collection from movie_info;
+
+select avg(IMDb_rating) as average_rating from movie_info;
+
+select max(budget) from movie_info;
+
+select min(collection) from movie_info;
